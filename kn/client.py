@@ -154,41 +154,43 @@ class Play:
             if 0 <= x - 4 + i and x + i <= 19:
                 if game[y][x - 4 + i] == game[y][x - 3 + i] == game[y][x - 2 + i] == game[y][x - 1 + i] == \
                         game[y][x + i]:
-                    game[y][x - 4 + i] = game[y][x] + 2
-                    game[y][x - 3 + i] = game[y][x] + 2
-                    game[y][x - 2 + i] = game[y][x] + 2
-                    game[y][x - 1 + i] = game[y][x] + 2
-                    game[y][x + i] = game[y][x] + 2
+                    game[y][x - 4 + i] = game[y][x + i] + 2
+                    game[y][x - 3 + i] = game[y][x + i] + 2
+                    game[y][x - 2 + i] = game[y][x + i] + 2
+                    game[y][x - 1 + i] = game[y][x + i] + 2
+                    game[y][x + i] = game[y][x + i] + 2
                     return True
         for i in range(5):
             if 0 <= y - 4 + i and y + i <= 19:
                 if game[y - 4 + i][x] == game[y - 3 + i][x] == game[y - 2 + i][x] == game[y - 1 + i][x] == \
                         game[y + i][x]:
-                    game[y - 4 + i][x] = game[y][x] + 2
-                    game[y - 3 + i][x] = game[y][x] + 2
-                    game[y - 2 + i][x] = game[y][x] + 2
-                    game[y - 1 + i][x] = game[y][x] + 2
-                    game[y + i][x] = game[y][x] + 2
+                    game[y - 4 + i][x] = game[y + i][x] + 2
+                    game[y - 3 + i][x] = game[y + i][x] + 2
+                    game[y - 2 + i][x] = game[y + i][x] + 2
+                    game[y - 1 + i][x] = game[y + i][x] + 2
+                    game[y + i][x] = game[y + i][x] + 2
                     return True
         for i in range(5):
             if x - 4 + i >= 0 <= y - 4 + i and y + i <= 19 >= x + i:
                 if game[y - 4 + i][x - 4 + i] == game[y - 3 + i][x - 3 + i] == game[y - 2 + i][x - 2 + i] == \
                         game[y - 1 + i][x - 1 + i] == game[y + i][x + i]:
-                    game[y - 4 + i][x - 4 + i] = game[y][x] + 2
-                    game[y - 3 + i][x - 3 + i] = game[y][x] + 2
-                    game[y - 2 + i][x - 2 + i] = game[y][x] + 2
-                    game[y - 1 + i][x - 1 + i] = game[y][x] + 2
-                    game[y + i][x + i] = game[y][x] + 2
+                    game[y - 4 + i][x - 4 + i] = game[y + i][x + i] + 2
+                    game[y - 3 + i][x - 3 + i] = game[y + i][x + i] + 2
+                    game[y - 2 + i][x - 2 + i] = game[y + i][x + i] + 2
+                    game[y - 1 + i][x - 1 + i] = game[y + i][x + i] + 2
+                    game[y + i][x + i] = game[y + i][x + i] + 2
                     return True
         for i in range(5):
             if 0 <= y - 4 + i and y + i <= 19 and x - i >= 0 and x + 4 - i <= 19:
                 if game[y - 4 + i][x + 4 - i] == game[y - 3 + i][x + 3 - i] == game[y - 2 + i][x + 2 - i] == \
                         game[y - 1 + i][x + 1 - i] == game[y + i][x + i]:
-                    game[y - 4 + i][x + 4 - i] = game[y][x] + 2
-                    game[y - 3 + i][x + 3 - i] = game[y][x] + 2
-                    game[y - 2 + i][x + 2 - i] = game[y][x] + 2
-                    game[y - 1 + i][x + 1 - i] = game[y][x] + 2
-                    game[y + i][x - i] = game[y][x] + 2
+                    game[y - 4 + i][x + 4 - i] = game[y + i][x - i] + 2
+                    game[y - 3 + i][x + 3 - i] = game[y + i][x - i] + 2
+                    game[y - 2 + i][x + 2 - i] = game[y + i][x - i] + 2
+                    game[y - 1 + i][x + 1 - i] = game[y + i][x - i] + 2
+                    print(game)
+                    game[y + i][x - i] = game[y + i][x - i] + 2
+                    print(game)
                     return True
         return False
 
@@ -213,3 +215,5 @@ rs.grid(row=2, column=0, columnspan=3, sticky="w")
 # win.bind("<KeyPress-space>", Play)
 win.columnconfigure(1, weight=1)
 win.mainloop()
+
+
